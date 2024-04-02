@@ -1,0 +1,84 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Container, Grid, Box, Button } from '@mui/material';
+import styled from 'styled-components';
+import PeopleCelebrating from "../assets/peopleCelebrating.svg"; // Updated image import
+
+const Homepage = () => {
+    return (
+        <StyledContainer>
+            <StyledHeader>
+                <StyledNavigation>
+                    <Link to="/home">Home</Link>
+                    <Link to="/shop">Shop</Link>
+                    <Link to="/aboutus">About us</Link>
+                    <Link to="/profile">Profile</Link>
+                    <Link to="/contacts">Contacts</Link>
+                </StyledNavigation>
+
+                <StyledAuthButtons>
+                    <Button variant="outlined" color="inherit">
+                        Login
+                    </Button>
+
+                    <Button variant="contained" color="primary">
+                        Sign up
+                    </Button>
+                </StyledAuthButtons>
+            </StyledHeader>
+
+            <Grid container spacing={0}>
+                {/* Content Section */}
+                <Grid item xs={12} md={8}>
+                    {/* Title and Description */}
+                    <Box p={3}>
+                        {/* Title */}
+                        "LOREM IPSUM DOLOR"
+
+                        {/* Description */}
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+
+                        {/* Show More Button */}
+                        "Show more"
+                    </Box>
+
+                    {/* Image Section */}
+                    <img src={PeopleCelebrating} alt="people celebrating" style={{ width: '100%' }} />
+                </Grid>
+
+                {/* Image Section */}
+                <img src={PeopleCelebrating} alt="people celebrating" style={{ width: '100%' }} />
+            </Grid>
+        </StyledContainer>
+    );
+};
+
+export default Homepage;
+
+// Styled Components for Header and Navigation
+const StyledContainer = styled(Container)`
+    // Add styles as per your requirements
+`;
+
+const StyledHeader = styled.header`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+`;
+
+const StyledNavigation = styled.nav`
+    & > a {
+        margin-right: 20px;
+        color: inherit;
+        text-decoration: none;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+`;
+
+const StyledAuthButtons = styled.div`
+    // Add styles for authentication buttons
+`;
